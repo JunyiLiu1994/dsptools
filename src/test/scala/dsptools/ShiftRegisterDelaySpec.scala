@@ -2,7 +2,7 @@
 
 package dsptools
 
-import chisel3.{fromDoubleToLiteral => _, fromIntToBinaryPoint => _, _}
+import chisel3._//{fromDoubleToLiteral => _, fromIntToBinaryPoint => _, _}
 import chiseltest._
 import chiseltest.iotesters._
 import dsptools.misc.PeekPokeDspExtensions

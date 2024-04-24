@@ -105,7 +105,7 @@ object Sign {
     }
   }
 
-  implicit final val SignAlgebra = new SignAlgebra
+  implicit final val SignAlgebra: SignAlgebra = new SignAlgebra
 
   implicit final val SignMultiplicativeGroup: MultiplicativeCMonoid[Sign] =
     Multiplicative(SignAlgebra)

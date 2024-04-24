@@ -112,14 +112,14 @@ class DspComplexBinaryRepresentation[T <: Data: Ring: BinaryRepresentation]
 }
 
 trait GenericDspComplexImpl {
-  implicit def DspComplexRingDataImpl[T <: Data:         Ring] = new DspComplexRingData[T]()
-  implicit def DspComplexEq[T <: Data:                   Eq] = new DspComplexEq[T]()
-  implicit def DspComplexBinaryRepresentation[T <: Data: Ring: BinaryRepresentation] =
+  implicit def DspComplexRingDataImpl[T <: Data:         Ring]: DspComplexRingData[T] = new DspComplexRingData[T]()
+  implicit def DspComplexEq[T <: Data:                   Eq]: DspComplexEq[T] = new DspComplexEq[T]()
+  implicit def DspComplexBinaryRepresentation[T <: Data: Ring: BinaryRepresentation]: DspComplexBinaryRepresentation[T] =
     new DspComplexBinaryRepresentation[T]()
 }
 
 trait DspComplexImpl extends GenericDspComplexImpl {
-  implicit def DspComplexRingUIntImpl = new DspComplexRingUInt
-  implicit def DspComplexRingSIntImpl = new DspComplexRingSInt
-  implicit def DspComplexRingFixedImpl = new DspComplexRingFixed
+  implicit def DspComplexRingUIntImpl: DspComplexRingUInt = new DspComplexRingUInt
+  implicit def DspComplexRingSIntImpl: DspComplexRingSInt = new DspComplexRingSInt
+  implicit def DspComplexRingFixedImpl: DspComplexRingFixed = new DspComplexRingFixed
 }

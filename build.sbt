@@ -5,7 +5,8 @@ enablePlugins(SiteScaladocPlugin)
 enablePlugins(GhpagesPlugin)
 
 val defaultVersions = Map(
-  "chisel" -> "6.0.0"
+  "chisel" -> "6.0.0",
+  "chiseltest" -> "6.0.0"
 )
 
 name := "dsptools"
@@ -45,9 +46,9 @@ val dsptoolsSettings = Seq(
     "org.scalanlp" %% "breeze" % "2.1.0",
     "org.scalatest" %% "scalatest" % "3.2.15" % "test"
   ),
-  // libraryDependencies ++= Seq("chiseltest").map { dep: String =>
-  //   "edu.berkeley.cs" %% dep % sys.props.getOrElse(dep + "Version", defaultVersions(dep))
-  // },
+  libraryDependencies ++= Seq("chiseltest").map { dep: String =>
+    "edu.berkeley.cs" %% dep % sys.props.getOrElse(dep + "Version", defaultVersions(dep))
+  },
   pomExtra := <url>http://chisel.eecs.berkeley.edu/</url>
     <licenses>
       <license>
